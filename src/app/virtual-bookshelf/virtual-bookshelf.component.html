@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navColor">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a 
+            class="nav-link spacing" 
+            routerLink="read" 
+            (click)="changeSubActive('read')" 
+            [ngClass]="{'isActive': currentRouteActive['read']}"
+          >Library</a>
+          <a 
+            class="nav-link spacing" 
+            routerLink="currently-reading" 
+            (click)="changeSubActive('currently-reading')"
+            [ngClass]="{'isActive': currentRouteActive['currently-reading']}"
+            >Reading</a>
+          <a 
+            class="nav-link spacing" 
+            routerLink="to-be-read" 
+            (click)="changeSubActive('to-be-read')"
+            [ngClass]="{'isActive': currentRouteActive['to-be-read']}"
+            >Want to Read</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<router-outlet></router-outlet>

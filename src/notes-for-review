@@ -1,0 +1,104 @@
+[!- 'info' -!] is used to indicate comments
+<!-- 'info' --> is used to indicate something that is no longer used
+
+
+creating the project:
+    ng new 'name_of_project'
+
+
+generated a new component using the CLI:
+    ng g c 'name_of_component'
+
+
+<!-- to display the content of the newly created component(home) in the app's root i used the component selector inside app.component.css:
+    <app-home></app-home> --> this was removed after i started setting up the routing
+
+
+configuring routing:
+    i already said yes to configure routing when the executing [ng new] so most of the code was done for me withing app-routing.module.ts
+
+    i imported the home component:
+        import { HomeComponent } from './home/home.component';
+
+    and defined the route inside the routes variable:
+         { path: '', component: HomeComponent }  [!- app-routing.module.ts -> line 6 -!]
+
+
+creating a nav bar to navigate to Home:
+    just added :
+                <nav>
+                    <a routerLink="home">Home</a>
+                </nav>
+                <router-outlet></router-outlet>
+    to app.component.html 
+        the <router-outlet></router-outlet> is where angular will know to render the component.
+
+
+generated two more components:
+    [!- refer to line 9 -!]
+    reading-progress-tracker
+    virtual-bookshelf
+
+
+configured the routing for the two new components:
+    [!- refer to line 17 -!]
+
+
+adding bootstrap:
+    cd to the main project file
+        npm install bootstrap
+
+    went to the angular.json file:
+        modified "styles" [!- angular.json -> line 27 -]
+        by adding "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+
+adding a child routing to virtual-bookshelf:
+    <!-- i cd into virtual-bookshelf and using the cli:
+        ng generate module bookshelf-routing --flat --module=app --> this was totally wrong and created so much errors.
+    so i deleted the whole bookshelf-routing.module.ts file. (app.module.ts made errors)
+
+    just needed to go to the routing.module (app-routing.module.ts):
+        and add within the route dict a new key called children and repeat the normal routing proses : [!- app-routing.module.ts -> line 14-]
+            and import the components at the top.
+
+    -generated two new components within virtual-bookshelf:
+        [!- refer to line 9 -!]
+
+        
+working on the sidebar:
+    went to [!- https://getbootstrap.com/docs/5.0/examples/sidebars/ -!] and copied the styling.
+        [!- review classes that was used-!]
+    
+    started using [ngClass]="{'class': condition}  
+    [!- [ngClass]="{'active': someCondition['key'], 'nav-link text-white': true, 'nav-link': true}" -!] 
+        with using a dictionary and (click)='navLinkColor("key")'
+
+            [!- code -!]
+                someCondition: { [key: string]: boolean } = {
+                    bookshelf: true,
+                    search: false,
+                    dashboard: false,
+                    settings: false,
+                };
+
+                current = 'bookshelf' //keeps track of what key value should be set to false
+
+                navLinkColor(data : string){
+                    this.someCondition[data] = !this.someCondition[data]
+                    this.someCondition[this.current] = false
+                    this.current = data
+                }
+            [!- code -!]
+
+    added fontawesome glyphs:
+        <script src="https://kit.fontawesome.com/f7d4f866dc.js" crossorigin="anonymous"></script> with in the main index.html
+            added:
+                <i class="fa-solid fa-magnifying-glass"></i> for magnifying-glass
+
+
+
+to do today:
+    finnish side bar:
+        (done)add svg's
+        work om display

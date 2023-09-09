@@ -1,0 +1,49 @@
+<nav  class="d-flex flex-column flex-shrink-0 text-white bg-dark" style="width:100%; height: 100vh;">
+    <a href="/" class="d-flex align-items-center text-white text-decoration-none px-3 pt-3">
+      <i class="fa-solid fa-plus"></i>
+      <span class="nav-link text-white" style="font-size: 23px;" routerLink="/">BiblioInsights</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto ">
+      <li class="nav-item " (click)="navLinkColor('search')" >
+        <a routerLink="search" [ngClass]="{'active bg-info': someCondition['search'], 'nav-link rounded-0 m-0 text-white': true, 'nav-link onHover': true}" aria-current="page">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Search
+        </a>
+      </li>
+      <li (click)="navLinkColor('bookshelf')">
+        <a [ngClass]="{'active bg-info': someCondition['bookshelf'], 'nav-link text-white': true, 'nav-link m-0 rounded-0 onHover': true}" routerLink="BookShelf">
+          <!-- Your link content here -->
+          <i class="fa-solid fa-book"></i>
+          Bookshelf
+        </a>
+      </li>
+      <li (click)="navLinkColor('browse')">
+        <a [ngClass]="{'active bg-info': someCondition['browse'], 'nav-link text-white': true, 'nav-link m-0 rounded-0 onHover': true}" routerLink="browse">
+          <!-- Your link content here -->
+          <i class="fa-solid fa-book-open"></i>
+          Browse
+        </a>
+      </li>
+      <li (click)="navLinkColor('dashboard')">
+        <a routerLink="Tracker" [ngClass]="{'active bg-info': someCondition['dashboard'], 'nav-link m-0 rounded-0 text-white onHover': true, 'nav-link': true}">
+          <i class="fa-solid fa-chart-simple"></i>
+          Dashboard
+        </a>
+      </li>
+      <li (click)="navLinkColor('settings')">
+        <a [ngClass]="{'active bg-info': someCondition['settings'], 'nav-link m-0 rounded-0 text-white': true, 'nav-link onHover': true}">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </li>
+      
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1">
+        <i class="fa-solid fa-user me-2"></i>
+        <strong>Login</strong>
+      </a>
+    </div>
+  </nav>

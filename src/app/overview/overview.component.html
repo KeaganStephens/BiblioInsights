@@ -1,0 +1,49 @@
+<div class="infoContainerBlack parent">
+    <div class="child infoContainerWhite parent">
+        <div class="exitDiv parent" (click)="closeOverview()">
+            <i class="fa-solid fa-xmark child"></i>
+        </div>
+        <div class="child infoContainerTransparent infoGrid-container">
+            <div class="infoGrid-item-Book parent">
+                <div class="child InfoAddBookCenter">
+                    <div class="infoAddBook parent">
+                        <div class="InfoBookCoverContainer child parent"> 
+                            <div class="child">
+                                
+                                <img src="https://covers.openlibrary.org/b/olid/{{bookInfo.id}}.jpg" alt="" class="imgR InfoBookCover">
+                                
+                                <button class="infoBookAddButton" (click)="addToLibrary(bookInfo.id)">+Bookshelf</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoAddPublisher parent">
+                        <p class="child">
+                            Publisher: <br>
+                            {{bookInfo.publishers}}
+                        </p>
+                    </div>
+                    <div class="infoAddPDate parent">
+                        <p class="child">
+                            Published: <br>
+                            {{bookInfo.publish_date}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="infoGrid-item-Info">
+                <div class="grid-containerInfo">
+                    <div class="titleContainer">
+                        <h2 class="infoTitleH1">{{bookInfo.title}}</h2>
+                        <p class="byStatement">{{bookInfo.by_statement}}</p>
+                    </div>
+                    <button class="addNotesButton">+Notes</button>
+                </div>
+                <div class="notesContainer">
+                    <h3 class="notesH3">Notes</h3>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

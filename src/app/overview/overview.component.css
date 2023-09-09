@@ -1,0 +1,201 @@
+.imgR {
+    border: solid 2px transparent;
+    border-radius: 9px;
+    height: 100%;
+    width: 100%;
+}
+
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.searchContainer {
+    width: calc(100vw - 181px);
+    height: 7vh;
+}
+
+.inputSearch {
+    height: 70%;
+    width: 97%;
+    border: solid 2px #DAE5EF;
+    border-radius: 9px;
+    background-color: #DAE5EF;
+    color: white;
+}
+
+.grid-item:hover {
+    border-color: #212529;
+    background-color: white;
+}
+
+.infoContainerBlack {
+    background-color: rgba(0, 0, 0, 85%);
+    position: absolute;
+    height: 100vh;
+    width: calc(100vw - 181px);
+    z-index: 100;
+}
+
+.infoContainerWhite {
+    background-color: white;
+    position: absolute;
+    height: 80vh;
+    width: calc(80vw - 181px);
+    z-index: 101;
+    border: solid 1px white;
+    border-radius: 9px;
+}
+
+.infoContainerTransparent {
+    position: absolute;
+    height: 70vh;
+    width: calc(72vw - 181px);
+    z-index: 102;
+    border-radius: 9px;
+}
+
+.infoGrid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    overflow: scroll;
+    border-radius: 9px;
+}
+
+.infoGrid-item-Book {
+    background-color: white;
+    border-radius: 9px;
+    width: calc((72vw - 181px) * 0.3);
+}
+
+.infoGrid-item-Info {
+    background-color: white;
+    border-radius: 9px;
+    width: calc((72vw - 181px) * 0.7);
+    padding-top: 2vh;
+}
+
+.infoAddBook {
+    background-color: white;
+    border: 1px solid #212529;
+    border-radius: 9px;
+    height: 40vh;
+    width: calc((72vw - 181px) * 0.25);
+    margin-bottom: 3vh;
+}
+
+.infoAddPDate {
+    text-align: center;
+    background-color: white;
+    border: 1px solid #212529;
+    border-radius: 9px;
+    height: 9vh;
+    width: calc((72vw - 181px) * 0.25);
+}
+
+.infoAddPublisher {
+    text-align: center;
+    background-color: white;
+    border: 1px solid #212529;
+    border-radius: 9px;
+    height: 9vh;
+    width: calc((72vw - 181px) * 0.25);
+    margin-bottom: 3vh;
+}
+
+.InfoAddBookCenter {}
+
+.InfoBookCoverContainer {
+    width: calc(calc(72vw - 181px) * 0.20);
+    height: 35vh;
+}
+
+.InfoBookCover {
+    width: calc(calc(72vw - 181px) * 0.18);
+    height: calc((calc(72vw - 181px) * 0.18) * 1.2);
+    margin-bottom: 2vh;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.infoBookAddButton {
+    width: calc(calc(72vw - 181px) * 0.18);
+    height: 7vh;
+    border: solid 3px #00CBF0;
+    background-color: #00CBF0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    font-size: 20px;
+    color: white;
+}
+
+.infoBookAddButton:active {
+    background-color: white;
+    color: #00CBF0;
+}
+
+.titleContainer {
+    width: calc(calc(72vw - 181px) * 0.5);
+    height: calc((calc(72vw - 181px) * 0.1) * 1.2);
+}
+
+.grid-containerInfo {
+    display: grid;
+    width: calc((70vw - 181px) * 0.7);
+    grid-template-columns: auto auto;
+}
+
+.addNotesButton {
+    height: calc((calc(72vw - 181px) * 0.1) * 0.6);
+    border: solid 3px #00CBF0;
+    background-color: #00CBF0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    color: white;
+}
+
+.notesContainer {
+    height: calc(65vh - calc((calc(72vw - 181px) * 0.1) * 1.2));
+    border: solid #212529 1px;
+    border-radius: 9px;
+    width: calc((70vw - 181px) * 0.7);
+}
+
+.byStatement {
+    overflow: scroll;
+    width: 30vw;
+    height: 3vh;
+    margin-top: -1vh;
+}
+
+.infoTitleH1 {
+    overflow: scroll;
+    height: 5vh;
+    width: 100%;
+}
+
+.notesH3 {
+    padding-left: 2vw;
+    padding-top: 1vh;
+}
+
+hr {
+    margin: 0;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.exitDiv{
+    height: 4vh;
+    width: 4vh;
+    border: solid 5px white;
+    background-color: white;
+    border-radius: 9px;
+    position: relative;
+    left: calc(80.5vw - 181px);;
+  }

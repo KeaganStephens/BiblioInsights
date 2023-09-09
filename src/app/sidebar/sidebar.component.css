@@ -1,0 +1,15 @@
+.colorChange{
+    background-color: #7895B2;
+}
+
+.onHover:hover{
+    background-color: rgba(0, 204, 240,70%);
+}
+
+.onHover{
+    margin: 0.1vh;
+}
+
+.noPadding{
+    padding: 0%;
+}

@@ -1,0 +1,14 @@
+<form id="search-form" (keyup)="test($event)" class="searchContainer parent ">
+    <!-- <label for="search-query">Search for Books:</label> -->
+    <input type="text" placeholder="Search" class="child inputSearch">
+</form>
+
+<div class="grid-container parent" id='gridContainer'>
+    <ng-container>
+        <div *ngFor="let result of array" class="grid-item parentI" (click)="addToLibrary(result[0])">
+            <i class="fa-solid fa-circle-plus fa-lg childI"></i>
+            <!-- <p>{{result[1]}}</p> -->
+            <img src="https://covers.openlibrary.org/b/olid/{{result[0]}}-M.jpg" alt="" class="imgR">
+        </div>
+    </ng-container>
+    </div>

@@ -1,0 +1,12 @@
+<app-overview *ngIf="bookInfo.toDisplay" ></app-overview>
+<div class="grid-container parent" id='gridContainer' (scroll)="trackScroll()">
+    <ng-container>
+        <div *ngFor="let item of bookList" class="grid-item child parentI" (click)="showOverview(item[0])" (click)="getInfoFromApi(item[1])"> 
+            <!-- <p>{{item}}</p> -->
+        <!-- <i class="fa-solid fa-circle-plus fa-lg childI"></i> -->
+        <img src="https://covers.openlibrary.org/b/olid/{{item[0]}}-M.jpg" alt="" class="imgR">
+        </div>
+    </ng-container>
+    
+<div *ngIf="isLoading" class="loading parent"><i class="fa-solid fa-spinner child"></i></div>
+    </div>
