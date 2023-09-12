@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from 'src/data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-browse-books',
@@ -7,7 +8,10 @@ import { DataService } from 'src/data.service';
   styleUrls: ['./browse-books.component.css']
 })
 export class BrowseBooksComponent implements OnInit {
-  constructor(private dataService : DataService){}
+  constructor(
+    private dataService : DataService,
+    private snackbar : MatSnackBar
+    ){}
 
   bookInfo : any
 

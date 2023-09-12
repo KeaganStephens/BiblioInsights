@@ -13,6 +13,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowseBooksComponent } from './browse-books/browse-books.component';
 import { SearchBooksComponent } from './search-books/search-books.component';
 import { OverviewComponent } from './overview/overview.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Import BrowserAnimationsModule
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { OverviewComponent } from './overview/overview.component';
     SidebarComponent,
     BrowseBooksComponent,
     SearchBooksComponent,
-    OverviewComponent
+    OverviewComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule, // Add BrowserAnimationsModule to the imports array
+    MatSnackBarModule, // Add MatSnackBarModule to the imports array
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

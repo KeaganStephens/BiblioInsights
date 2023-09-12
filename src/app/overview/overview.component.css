@@ -109,7 +109,7 @@
     margin-bottom: 3vh;
 }
 
-.InfoAddBookCenter {}
+/* .InfoAddBookCenter {} */
 
 .InfoBookCoverContainer {
     width: calc(calc(72vw - 181px) * 0.20);
@@ -137,6 +137,7 @@
 .infoBookAddButton:active {
     background-color: white;
     color: #00CBF0;
+    border-color: white;
 }
 
 .titleContainer {
