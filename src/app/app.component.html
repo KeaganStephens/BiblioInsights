@@ -12,7 +12,7 @@
 <div class="container-fluid" *ngIf="viewportWidth < 767">
   <div class="row" >
     <div class="col-md" style="padding: 0; overflow:hidden">
-      <router-outlet style="padding: 0; overflow:scroll"></router-outlet>
+      <router-outlet style="padding: 0; overflow:scroll; max-height:80vh;"></router-outlet>
     </div>
     <div class="col-md" style="padding: 0">
       <app-mobile-bar [currentRouting]="currentRoute"></app-mobile-bar>

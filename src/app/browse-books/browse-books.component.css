@@ -3,7 +3,7 @@
   grid-template-columns: auto auto auto auto auto auto auto;
   background-color: #FEFFFF;
   height: auto;
-  max-height: 100vh;
+  max-height: 90vh;
   overflow: scroll;
   width: calc(100vw - 181px);
 }
@@ -116,7 +116,7 @@ width: 100vw;
 /* Styles for devices with a minimum width of 768px (typical tablets) */
 @media (min-width: 768px) {
   .grid-container {
-    max-height: 100vh;
+    max-height: 90vh;
     width: calc(100vw - 80px);
   }
   .grid-item {
