@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
   background-color: #FEFFFF;
-  height: auto;
+  height: 90vh;
   max-height: 90vh;
   overflow: scroll;
   width: calc(100vw - 181px);
@@ -136,7 +136,7 @@ width: 100vw;
 /* Styles for devices with a minimum width of 992px (typical small laptops) */
 @media (min-width: 992px) {
   .grid-container {
-    max-height: 100vh;
+    height: 100vh;
     width: calc(100vw - 181px);
   }
   .grid-item {
@@ -156,7 +156,7 @@ width: 100vw;
 /* Styles for devices with a minimum width of 1200px (typical large desktops) */
 @media (min-width: 1200px) {
   .grid-container {
-    max-height: 100vh;
+    height: 100vh;
     width: calc(100vw - 181px);
   }
   .grid-item {
