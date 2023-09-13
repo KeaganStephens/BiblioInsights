@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="viewportWidth > 767">
   <div class="row" style="min-width: 768px">
-    <div class="col" style="padding: 0; max-width: 181px;">
+    <div class="col" style="padding: 0" [ngStyle]="{'max-width.px': viewportWidth < 992 ? 80 : 181 }">
       <app-sidebar [currentRouting]="currentRoute"></app-sidebar>
     </div>
     <div class="col" style="padding: 0; overflow:hidden" >
@@ -9,4 +9,14 @@
   </div>
 </div>
 
+<div class="container-fluid" *ngIf="viewportWidth < 767">
+  <div class="row" >
+    <div class="col-md" style="padding: 0; overflow:hidden">
+      <router-outlet style="padding: 0; overflow:scroll"></router-outlet>
+    </div>
+    <div class="col-md" style="padding: 0">
+      <app-mobile-bar [currentRouting]="currentRoute"></app-mobile-bar>
+    </div>
+  </div>
+</div>
 

@@ -1,4 +1,4 @@
-.colorChange{
+/* .colorChange{
     background-color: #7895B2;
 }
 
@@ -12,4 +12,488 @@
 
 .noPadding{
     padding: 0%;
-}
+} */
+
+/* Styles for devices with a maximum width of 767px (typical phones) */
+@media (max-width: 767px) {
+    /* Add your CSS rules for small screens here */
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        flex-shrink: 0;
+        text-align: center;
+        background-color: #343a40;
+        width: 100%;
+        height: 10vh;
+        color: white;
+    }
+    
+    .sidebar-link {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-decoration: none;
+        padding: 3vh 0;
+        display: none;
+    }
+    
+    .biblioText{
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon {
+        margin-right: 10px;
+        color: white;
+        margin: auto
+    }
+    
+    .sidebar-text {
+        font-size: 23px;
+        color: white;
+    }
+    
+    .divider {
+        color: white;
+        opacity: 50%;
+        /* border: 1px solid ; */
+        width: 100%;
+        margin: 0;
+        margin-bottom: 2vh;
+        display: none ;
+    }
+    
+    .nav-list {
+        list-style-type: none;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+        display: inline;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: white;
+        /* padding: 10px 20px; */
+        padding: 2vh 2vw;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-link:hover {
+        background-color: #17a2b8;
+    }
+    
+    .dropdown-link {
+        color: white;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+    
+    .dropdown{
+        color: white;
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .inlineTextN{
+        display: inline;
+        display: none;
+        ;
+      }
+    /* Add your CSS rules for tablets here */
+  }
+  
+  /* Styles for devices with a minimum width of 992px (typical small laptops) */
+  @media (min-width: 992px) {
+    /* Add your CSS rules for small laptops/desktops here */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        text-align: center;
+        background-color: #343a40;
+        width: 100%;
+        height: 100vh;
+        color: white;
+    }
+    
+    .sidebar-link {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-decoration: none;
+        padding: 3vh 0;
+    }
+    
+    .biblioText{
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon {
+        margin-right: 10px;
+        color: white;
+        margin: auto
+    }
+    
+    .sidebar-text {
+        font-size: 23px;
+        color: white;
+    }
+    
+    .divider {
+        color: white;
+        opacity: 50%;
+        /* border: 1px solid ; */
+        width: 100%;
+        margin: 0;
+        margin-bottom: 2vh;
+    }
+    
+    .nav-list {
+        list-style-type: none;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: white;
+        /* padding: 10px 20px; */
+        padding: 2vh 2vw;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-link:hover {
+        background-color: #17a2b8;
+    }
+    
+    .dropdown-link {
+        color: white;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+    
+    .dropdown{
+        color: white;
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .inlineText{
+        display: inline;
+      }
+
+    .inlineTextN{
+        display: inline;
+        ;
+    }
+  }
+  
+  /* Styles for devices with a minimum width of 768px (typical tablets) */
+  @media (min-width: 768px) {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        text-align: center;
+        background-color: #343a40;
+        width: 100%;
+        height: 100vh;
+        color: white;
+    }
+    
+    .sidebar-link {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-decoration: none;
+        padding: 3vh 0;
+    }
+    
+    .biblioText{
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon {
+        margin-right: 10px;
+        color: white;
+        margin: auto
+    }
+    
+    .sidebar-text {
+        font-size: 23px;
+        color: white;
+    }
+    
+    .divider {
+        color: white;
+        opacity: 50%;
+        /* border: 1px solid ; */
+        width: 100%;
+        margin: 0;
+        margin-bottom: 2vh;
+    }
+    
+    .nav-list {
+        list-style-type: none;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: white;
+        /* padding: 10px 20px; */
+        padding: 2vh 2vw;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-link:hover {
+        background-color: #17a2b8;
+    }
+    
+    .dropdown-link {
+        color: white;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+    
+    .dropdown{
+        color: white;
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .inlineTextN{
+        display: inline;
+        display: none;
+        ;
+      }
+    /* Add your CSS rules for tablets here */
+  }
+  
+  /* Styles for devices with a minimum width of 992px (typical small laptops) */
+  @media (min-width: 992px) {
+    /* Add your CSS rules for small laptops/desktops here */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        text-align: center;
+        background-color: #343a40;
+        width: 100%;
+        height: 100vh;
+        color: white;
+    }
+    
+    .sidebar-link {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-decoration: none;
+        padding: 3vh 0;
+    }
+    
+    .biblioText{
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon {
+        margin-right: 10px;
+        color: white;
+        margin: auto
+    }
+    
+    .sidebar-text {
+        font-size: 23px;
+        color: white;
+    }
+    
+    .divider {
+        color: white;
+        opacity: 50%;
+        /* border: 1px solid ; */
+        width: 100%;
+        margin: 0;
+        margin-bottom: 2vh;
+    }
+    
+    .nav-list {
+        list-style-type: none;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: white;
+        /* padding: 10px 20px; */
+        padding: 2vh 2vw;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-link:hover {
+        background-color: #17a2b8;
+    }
+    
+    .dropdown-link {
+        color: white;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+    
+    .dropdown{
+        color: white;
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .inlineText{
+        display: inline;
+      }
+
+    .inlineTextN{
+        display: inline;
+        ;
+    }
+
+  }
+  
+  /* Styles for devices with a minimum width of 1200px (typical large desktops) */
+  @media (min-width: 1200px) {    
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        text-align: center;
+        background-color: #343a40;
+        width: 100%;
+        height: 100vh;
+        color: white;
+    }
+    
+    .sidebar-link {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-decoration: none;
+        padding: 3vh 0;
+    }
+    
+    .biblioText{
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon {
+        margin-right: 10px;
+        color: white;
+        margin: auto
+    }
+    
+    .sidebar-text {
+        font-size: 23px;
+        color: white;
+    }
+    
+    .divider {
+        color: white;
+        opacity: 50%;
+        /* border: 1px solid ; */
+        width: 100%;
+        margin: 0;
+        margin-bottom: 2vh;
+    }
+    
+    .nav-list {
+        list-style-type: none;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: white;
+        /* padding: 10px 20px; */
+        padding: 2vh 2vw;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-link:hover {
+        background-color: #17a2b8;
+    }
+    
+    .dropdown-link {
+        color: white;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+    
+    .dropdown{
+        color: white;
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .inlineText{
+        display: inline;
+      }
+
+      .inlineTextN{
+        display: inline;
+        ;
+    }
+
+  }
+
+  

@@ -1,0 +1,36 @@
+<div class="sidebar">
+    <ul class="nav-list">
+        <li class="nav-item" routerLink="search" [ngClass]="{'active bg-info': someCondition['search'], 'nav-link': true}" (click)="navLinkColor('search')">
+            <a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p class="inlineTextN">Search</p>
+            </a>
+        </li>
+        <li class="nav-item" routerLink="BookShelf" [ngClass]="{'active bg-info': someCondition['bookshelf'], 'nav-link': true}" (click)="navLinkColor('bookshelf')">
+            <a>
+                <i class="fa-solid fa-book inlineText"></i>
+                <p class="inlineTextN"> Bookshelf</p>
+            </a>
+        </li>
+        <li class="nav-item" routerLink="browse" [ngClass]="{'active bg-info': someCondition['browse'], 'nav-link': true}" (click)="navLinkColor('browse')">
+            <a>
+                <i class="fa-solid fa-book-open inlineText"></i>
+                <p class="inlineTextN"> Browse</p>
+            </a>
+        </li>
+        <li class="nav-item" routerLink="dashboard" [ngClass]="{'active bg-info': someCondition['dashboard'], 'nav-link': true}" (click)="navLinkColor('dashboard')">
+            <a>
+                <i class="fa-solid fa-chart-simple inlineText"></i>
+                <p class="inlineTextN"> Dashboard</p>
+            </a>
+        </li>
+        <li class="nav-item" routerLink="#" [ngClass]="{'active bg-info': someCondition['settings'], 'nav-link': true}" (click)="navLinkColor('settings')">
+            <a >
+                <i class="fa-solid fa-gear inlineText"></i>
+                <p class="inlineTextN"> Settings</p>
+            </a>
+        </li>
+    </ul>
+  </div>
+  
+  

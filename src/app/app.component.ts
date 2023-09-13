@@ -1,4 +1,4 @@
-import { Component, SimpleChanges } from '@angular/core';
+import { Component, HostListener, SimpleChanges } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { DataService } from 'src/data.service';
 
@@ -11,9 +11,19 @@ export class AppComponent {
   title = 'BiblioInsights';
   currentRoute: string | undefined 
   constructor(private router: Router,private dataService : DataService) {}
+
+  viewportWidth : any
   
   ngOnInit(){
     this.getCurrentRoute();
+    this.viewportWidth = window.innerWidth
+    console.log(this.viewportWidth, 'hello')
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.viewportWidth = window.innerWidth;
+    console.log(`Current viewport width is ${this.viewportWidth}px`);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -35,4 +45,6 @@ export class AppComponent {
     }
     );
   }
+
+  
 }

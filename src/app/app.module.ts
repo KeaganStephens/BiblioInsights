@@ -16,6 +16,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Import BrowserAnimationsModule
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MobileBarComponent } from './mobile-bar/mobile-bar.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     BrowseBooksComponent,
     SearchBooksComponent,
     OverviewComponent,
+    MobileBarComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ export class BrowseBooksComponent implements OnInit {
     ){}
 
   bookInfo : any
+  
 
   items: number[] = []; 
   bookList: any = [

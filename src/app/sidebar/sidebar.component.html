@@ -1,49 +1,50 @@
-<nav  class="d-flex flex-column flex-shrink-0 text-white bg-dark" style="width:100%; height: 100vh;">
-    <a href="/" class="d-flex align-items-center text-white text-decoration-none px-3 pt-3">
-      <i class="fa-solid fa-plus"></i>
-      <span class="nav-link text-white" style="font-size: 23px;" routerLink="/">BiblioInsights</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto ">
-      <li class="nav-item " (click)="navLinkColor('search')" >
-        <a routerLink="search" [ngClass]="{'active bg-info': someCondition['search'], 'nav-link rounded-0 m-0 text-white': true, 'nav-link onHover': true}" aria-current="page">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          Search
-        </a>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="sidebar">
+  <a routerLink="/" class="sidebar-link">
+      <i class="icon fa-plus" style="font-size: 23px;"></i>
+      <span class="sidebar-text inlineTextN">BiblioInsights</span>
+  </a>
+  <hr class="divider">
+  <ul class="nav-list">
+      <li class="nav-item" routerLink="search" [ngClass]="{'active bg-info': someCondition['search'], 'nav-link': true}" (click)="navLinkColor('search')">
+          <a>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <p class="inlineTextN">Search</p>
+          </a>
       </li>
-      <li (click)="navLinkColor('bookshelf')">
-        <a [ngClass]="{'active bg-info': someCondition['bookshelf'], 'nav-link text-white': true, 'nav-link m-0 rounded-0 onHover': true}" routerLink="BookShelf">
-          <!-- Your link content here -->
-          <i class="fa-solid fa-book"></i>
-          Bookshelf
-        </a>
+      <li class="nav-item" routerLink="BookShelf" [ngClass]="{'active bg-info': someCondition['bookshelf'], 'nav-link': true}" (click)="navLinkColor('bookshelf')">
+          <a>
+              <i class="fa-solid fa-book inlineText"></i>
+              <p class="inlineTextN"> Bookshelf</p>
+          </a>
       </li>
-      <li (click)="navLinkColor('browse')">
-        <a [ngClass]="{'active bg-info': someCondition['browse'], 'nav-link text-white': true, 'nav-link m-0 rounded-0 onHover': true}" routerLink="browse">
-          <!-- Your link content here -->
-          <i class="fa-solid fa-book-open"></i>
-          Browse
-        </a>
+      <li class="nav-item" routerLink="browse" [ngClass]="{'active bg-info': someCondition['browse'], 'nav-link': true}" (click)="navLinkColor('browse')">
+          <a>
+              <i class="fa-solid fa-book-open inlineText"></i>
+              <p class="inlineTextN"> Browse</p>
+          </a>
       </li>
-      <li (click)="navLinkColor('dashboard')">
-        <a routerLink="Tracker" [ngClass]="{'active bg-info': someCondition['dashboard'], 'nav-link m-0 rounded-0 text-white onHover': true, 'nav-link': true}">
-          <i class="fa-solid fa-chart-simple"></i>
-          Dashboard
-        </a>
+      <li class="nav-item" routerLink="dashboard" [ngClass]="{'active bg-info': someCondition['dashboard'], 'nav-link': true}" (click)="navLinkColor('dashboard')">
+          <a>
+              <i class="fa-solid fa-chart-simple inlineText"></i>
+              <p class="inlineTextN"> Dashboard</p>
+          </a>
       </li>
-      <li (click)="navLinkColor('settings')">
-        <a [ngClass]="{'active bg-info': someCondition['settings'], 'nav-link m-0 rounded-0 text-white': true, 'nav-link onHover': true}">
-          <i class="fa-solid fa-gear"></i>
-          Settings
-        </a>
+      <li class="nav-item" routerLink="#" [ngClass]="{'active bg-info': someCondition['settings'], 'nav-link': true}" (click)="navLinkColor('settings')">
+          <a >
+              <i class="fa-solid fa-gear inlineText"></i>
+              <p class="inlineTextN"> Settings</p>
+          </a>
       </li>
-      
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1">
-        <i class="fa-solid fa-user me-2"></i>
-        <strong>Login</strong>
+  </ul>
+  
+  <div class="dropdown">
+    <hr class="divider">
+      <a href="#" class="dropdown-link">
+          <i class="fa-solid fa-user me-2"></i>
+          <strong class="inlineTextN">Login</strong>
       </a>
-    </div>
-  </nav>
+  </div>
+</div>
+
