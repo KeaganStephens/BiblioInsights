@@ -4,7 +4,6 @@
   background-color: #FEFFFF;
   height: 90vh;
   /* max-height: 90vh; */
-  overflow: scroll;
   width: calc(100vw - 181px);
 }
 
@@ -93,6 +92,7 @@
 .grid-container {
   grid-template-columns: auto auto ;
   width: 100vw;
+  height: auto;
 }
 
 .grid-item {
@@ -116,7 +116,7 @@
 /* Styles for devices with a minimum width of 768px (typical tablets) */
 @media (min-width: 768px) {
   .grid-container {
-    height: 100vh;
+    height: auto;
     width: calc(100vw - 80px);
   }
   .grid-item {
@@ -136,6 +136,7 @@
 /* Styles for devices with a minimum width of 992px (typical small laptops) */
 @media (min-width: 992px) {
   .grid-container {
+    overflow: scroll;
     height: 100vh;
     width: calc(100vw - 181px);
   }
@@ -156,6 +157,7 @@
 /* Styles for devices with a minimum width of 1200px (typical large desktops) */
 @media (min-width: 1200px) {
   .grid-container {
+    overflow: scroll;
     height: 100vh;
     width: calc(100vw - 181px);
   }
