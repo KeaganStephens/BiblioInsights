@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
 export class SidebarComponent implements OnInit, OnChanges {
   @Input() currentRouting: string | undefined;
   current : string | undefined
+  viewportWidth = window.innerWidth;
 
   someCondition: { [key: string]: boolean } = {
     bookshelf: false,
@@ -50,4 +51,14 @@ export class SidebarComponent implements OnInit, OnChanges {
     }
     this.current = data;
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.viewportWidth = window.innerWidth;
+    // console.log(`Current viewport width is ${this.viewportWidth}px`);
+  }
+
+
 }
+
+

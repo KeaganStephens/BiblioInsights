@@ -1,38 +1,38 @@
 <div class="sidebar">
   <a routerLink="/" class="sidebar-link">
       <i class="icon fa-plus" style="font-size: 23px;"></i>
-      <span class="sidebar-text inlineTextN">BiblioInsights</span>
+      <span class="sidebar-text inlineTextN" [ngClass]="{'displayHidden': viewportWidth < 992}">BiblioInsights</span>
   </a>
   <hr class="divider">
   <ul class="nav-list">
       <li class="nav-item" routerLink="search" [ngClass]="{'active bg-info': someCondition['search'], 'nav-link': true}" (click)="navLinkColor('search')">
           <a>
               <i class="fa-solid fa-magnifying-glass"></i>
-              <p class="inlineTextN">Search</p>
+              <p class="inlineTextN" [ngClass]="{'displayHidden': viewportWidth < 992}">Search</p>
           </a>
       </li>
       <li class="nav-item" routerLink="BookShelf" [ngClass]="{'active bg-info': someCondition['bookshelf'], 'nav-link': true}" (click)="navLinkColor('bookshelf')">
           <a>
               <i class="fa-solid fa-book inlineText"></i>
-              <p class="inlineTextN"> Bookshelf</p>
+              <p class="inlineTextN" [ngClass]="{'displayHidden': viewportWidth < 992}"> Bookshelf</p>
           </a>
       </li>
       <li class="nav-item" routerLink="browse" [ngClass]="{'active bg-info': someCondition['browse'], 'nav-link': true}" (click)="navLinkColor('browse')">
           <a>
               <i class="fa-solid fa-book-open inlineText"></i>
-              <p class="inlineTextN"> Browse</p>
+              <p class="inlineTextN" [ngClass]="{'displayHidden': viewportWidth < 992}"> Browse</p>
           </a>
       </li>
       <li class="nav-item" routerLink="dashboard" [ngClass]="{'active bg-info': someCondition['dashboard'], 'nav-link': true}" (click)="navLinkColor('dashboard')">
           <a>
               <i class="fa-solid fa-chart-simple inlineText"></i>
-              <p class="inlineTextN"> Dashboard</p>
+              <p class="inlineTextN" [ngClass]="{'displayHidden': viewportWidth < 992}"> Dashboard</p>
           </a>
       </li>
       <li class="nav-item" routerLink="#" [ngClass]="{'active bg-info': someCondition['settings'], 'nav-link': true}" (click)="navLinkColor('settings')">
           <a >
               <i class="fa-solid fa-gear inlineText"></i>
-              <p class="inlineTextN"> Settings</p>
+              <p class="inlineTextN" [ngClass]="{'displayHidden': viewportWidth < 992}"> Settings</p>
           </a>
       </li>
   </ul>
@@ -41,7 +41,7 @@
     <hr class="divider">
       <a href="#" class="dropdown-link">
           <i class="fa-solid fa-user me-2"></i>
-          <strong class="inlineTextN">Login</strong>
+          <strong class="inlineTextN" [ngClass]="{'displayHidden': viewportWidth < 992}">Login</strong>
       </a>
   </div>
 </div>
