@@ -18,6 +18,7 @@ export class AppComponent {
     this.getCurrentRoute();
     this.viewportWidth = window.innerWidth
     console.log(this.viewportWidth, 'hello')
+    this.router.navigate(['/browse'])
   }
 
   @HostListener('window:resize', ['$event'])
