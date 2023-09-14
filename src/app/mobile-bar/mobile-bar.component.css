@@ -7,8 +7,8 @@
     width: 100vw;
     height: 10vh;
     color: white;
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
 }
 
 .sidebar-link {

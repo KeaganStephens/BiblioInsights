@@ -3,7 +3,7 @@
   grid-template-columns: auto auto auto auto auto auto auto;
   background-color: #FEFFFF;
   height: 90vh;
-  max-height: 90vh;
+  /* max-height: 90vh; */
   overflow: scroll;
   width: calc(100vw - 181px);
 }
@@ -18,12 +18,12 @@
   text-align: center;
 }
   
-  .loading {
-    width: calc(calc(86vw - 181px) * 0.1);
-    height: calc((calc(86vw - 181px) * 0.1 )* 1.2);
-    margin: 2vw;
-    text-align: center;
-  }
+.loading {
+  width: calc(calc(86vw - 181px) * 0.1);
+  height: calc((calc(86vw - 181px) * 0.1 )* 1.2);
+  margin: 2vw;
+  text-align: center;
+}
   
 .imgR{
   border: solid 2px transparent;
@@ -64,7 +64,7 @@
 
 
 .parentI {
-position: relative;
+  position: relative;
 }
 
 .childI{
@@ -107,7 +107,7 @@ position: relative;
   }
 
 .searchContainer{
-width: 100vw;
+  width: 100vw;
 }
 
 }
@@ -116,7 +116,7 @@ width: 100vw;
 /* Styles for devices with a minimum width of 768px (typical tablets) */
 @media (min-width: 768px) {
   .grid-container {
-    max-height: 90vh;
+    height: 100vh;
     width: calc(100vw - 80px);
   }
   .grid-item {

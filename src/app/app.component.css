@@ -1,3 +1,45 @@
-container{
-    border: solid 5 px red;
-}
+.custom-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .custom-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+  .custom-col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  .custom-col-sidebar {
+    max-width: 181px;
+  }
+  
+  .custom-col-router {
+    flex: 1;
+  }
+  
+  .custom-col-md {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  
+  .custom-col-md-router {
+    max-height: 90vh;
+  }
+
+  .custom-col-md-mobile-bar{
+
+  }
+  
+  

@@ -1,4 +1,4 @@
-<div class="container-fluid" *ngIf="viewportWidth > 767">
+<!-- <div class="container-fluid" *ngIf="viewportWidth > 767">
   <div class="row" style="min-width: 768px">
     <div class="col" style="padding: 0" [ngStyle]="{'max-width.px': viewportWidth < 992 ? 80 : 181 }">
       <app-sidebar [currentRouting]="currentRoute"></app-sidebar>
@@ -18,5 +18,30 @@
       <app-mobile-bar [currentRouting]="currentRoute"></app-mobile-bar>
     </div>
   </div>
+</div> -->
+
+<!-- For Viewport Width > 767 -->
+<div class="custom-container" *ngIf="viewportWidth > 767">
+  <div class="custom-row" style="min-width: 768px">
+    <div class="custom-col-sidebar" style="padding: 0; max-width: 181px;" [ngStyle]="{'max-width.px': viewportWidth < 992 ? 80 : 181 }">
+      <app-sidebar [currentRouting]="currentRoute"></app-sidebar>
+    </div>
+    <div class="custom-col-router" style="padding: 0; overflow: hidden;">
+      <router-outlet style="padding: 0; overflow: scroll;"></router-outlet>
+    </div>
+  </div>
 </div>
+
+<!-- For Viewport Width < 767 -->
+<div class="custom-container" *ngIf="viewportWidth < 767">
+  <div class="custom-row">
+    <div class="custom-col-md-router" style="padding: 0; overflow: hidden;">
+      <router-outlet style="padding: 0; overflow: scroll;"></router-outlet>
+    </div>
+    <div class="custom-col-md-mobile-bar" style="padding: 0;">
+      <app-mobile-bar [currentRouting]="currentRoute"></app-mobile-bar>
+    </div>
+  </div>
+</div>
+
 
