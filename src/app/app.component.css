@@ -35,11 +35,11 @@
   }
   
   .custom-col-md-router {
-    max-height: 90vh;
+    height: 90vh;
   }
 
   .custom-col-md-mobile-bar{
-
+    height: 10vh;
   }
   
   
