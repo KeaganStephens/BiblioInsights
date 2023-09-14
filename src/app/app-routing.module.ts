@@ -11,7 +11,7 @@ import { SearchBooksComponent } from './search-books/search-books.component';
 
 const routes: Routes = [
   { path: 'search', component: SearchBooksComponent},
-  { path: '', component: HomeComponent },
+  { path: '', component: BrowseBooksComponent },
   { path: 'Tracker', component: ReadingProgressTrackerComponent },
   { path: 'browse', component: BrowseBooksComponent },
   { path: 'BookShelf', component: VirtualBookshelfComponent, 
