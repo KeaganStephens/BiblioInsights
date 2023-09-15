@@ -26,10 +26,19 @@ export class OverviewComponent {
     this.dataService.bookInfo.toDisplay = false
   }
 
-  addToLibrary(data : string){
+  removeFromLibrary(data : any){
+    // console.log(data)
+    this.bookInfo.inBookshelf = !this.bookInfo.inBookshelf
+    this.dataService.booksInLibrary.splice(this.dataService.bookList[this.dataService.bookInfo.currentIndex][3], this.dataService.bookList[this.dataService.bookInfo.currentIndex][3])
+    // console.log(this.dataService.booksInLibrary)
+  }
+
+  addToLibrary(data : any){
     console.log(data)
-    this.dataService.booksInLibrary.push(data)
-    console.log(this.dataService.booksInLibrary)
+    this.bookInfo.inBookshelf = !this.bookInfo.inBookshelf
+    this.dataService.bookList[this.dataService.bookInfo.currentIndex][3] = this.dataService.booksInLibrary.length
+    this.dataService.booksInLibrary.push(data.id)
+    console.log(this.dataService.bookInfo)
   }
 
   @HostListener('window:resize', ['$event'])

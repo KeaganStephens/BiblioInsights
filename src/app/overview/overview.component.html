@@ -12,7 +12,8 @@
                                 
                                 <img src="https://covers.openlibrary.org/b/olid/{{bookInfo.id}}.jpg" alt="" class="imgR InfoBookCover">
                                 
-                                <button class="infoBookAddButton" (click)="addToLibrary(bookInfo.id)">+Bookshelf</button>
+                                <button *ngIf="!bookInfo.inBookshelf" class="infoBookAddButton" (click)="addToLibrary(bookInfo)">+Bookshelf</button>
+                                <button *ngIf="bookInfo.inBookshelf" class="infoBookRemoveButton" (click)="removeFromLibrary(bookInfo)">-Bookshelf</button>
                             </div>
                         </div>
                     </div>
