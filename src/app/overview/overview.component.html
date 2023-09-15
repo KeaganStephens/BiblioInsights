@@ -30,17 +30,22 @@
                     </div>
                 </div>
             </div>
-            <div class="infoGrid-item-Info">
-                <div class="grid-containerInfo">
-                    <div class="titleContainer">
-                        <h2 class="infoTitleH1">{{bookInfo.title}}</h2>
-                        <p class="byStatement">{{bookInfo.by_statement}}</p>
+            <div class="infoGrid-item-Info parent">
+                <div class="infoGrid-item-Info-container child">
+                    <div class="grid-containerInfo">
+                        <div class="titleContainer">
+                            <h2 class="infoTitleH1">{{bookInfo.title}}</h2>
+                            <p class="byStatement">{{bookInfo.by_statement}}</p>
+                        </div>
+                        <div class="addNotesButtonFlex">
+                            <button class="addNotesButton">+Notes</button>
+                        </div>
+                        
                     </div>
-                    <button class="addNotesButton">+Notes</button>
-                </div>
-                <div class="notesContainer">
-                    <h3 class="notesH3">Notes</h3>
-                    <hr>
+                    <div class="notesContainer">
+                        <h3 class="notesH3">Notes</h3>
+                        <hr>
+                    </div>
                 </div>
             </div>
         </div>

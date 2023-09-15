@@ -4,6 +4,7 @@
   background-color: #FEFFFF;
   max-height: 90vh;
   height: auto;
+  overflow: scroll;
   /* max-height: 90vh; */
   width: calc(100vw - 181px);
 }

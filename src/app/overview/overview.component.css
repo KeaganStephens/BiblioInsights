@@ -123,6 +123,12 @@
 }
 
 /* .InfoAddBookCenter {} */
+.infoGrid-item-Info-container{
+    width:90% ;
+    height: 90%;
+    border: 1px solid slateblue;
+
+}
 
 .InfoBookCoverContainer {
     display: flex;
@@ -159,20 +165,28 @@
 }
 
 .titleContainer {
-    width: calc(calc(72vw - 181px) * 0.5);
-    height: calc((calc(72vw - 181px) * 0.1) * 1.2);
+    flex-basis: 75%;
+    width: 100%;
+    height: auto;
     border-color: gold; /* Debugging border color */
 }
 
 .grid-containerInfo {
-    display: grid;
-    width: calc((70vw - 181px) * 0.7);
-    grid-template-columns: auto auto;
-    border-color: lavender; /* Debugging border color */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    border: 1px solid;
+    border-color: rgb(14, 14, 181); /* Debugging border color */
+}
+
+.addNotesButtonFlex{
+    flex-basis: 25%;
 }
 
 .addNotesButton {
-    height: calc((calc(72vw - 181px) * 0.1) * 0.6);
+    height: 100%;
+    width: 100%;
     border: solid 3px #00CBF0;
     background-color: #00CBF0;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -198,8 +212,9 @@
 }
 
 .infoTitleH1 {
-    overflow: scroll;
-    height: 5vh;
+    flex-basis: 75%;
+    overflow: hidden;
+    height: 100%;
     width: 100%;
     border-color: dodgerblue; /* Debugging border color */
 }
