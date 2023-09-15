@@ -127,6 +127,8 @@
     width:90% ;
     height: 90%;
     border: 1px solid slateblue;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -185,8 +187,9 @@
 }
 
 .addNotesButton {
-    height: 100%;
-    width: 100%;
+    height: 5vh;
+    width: 90%;
+    margin-left: 10%;
     border: solid 3px #00CBF0;
     background-color: #00CBF0;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -196,17 +199,17 @@
 }
 
 .notesContainer {
-    height: calc(65vh - calc((calc(72vw - 181px) * 0.1) * 1.2));
+    flex-basis: auto;
     border: solid #212529 1px;
     border-radius: 9px;
-    width: calc((70vw - 181px) * 0.7);
+    width: 100%;
     border-color: lime; /* Debugging border color */
 }
 
 .byStatement {
     overflow: scroll;
-    width: 30vw;
-    height: 3vh;
+    width: 100%;
+    height: auto;
     margin-top: -1vh;
     border-color: chocolate; /* Debugging border color */
 }
@@ -214,14 +217,14 @@
 .infoTitleH1 {
     flex-basis: 75%;
     overflow: hidden;
-    height: 100%;
+    height: auto;
     width: 100%;
     border-color: dodgerblue; /* Debugging border color */
 }
 
 .notesH3 {
-    padding-left: 2vw;
-    padding-top: 1vh;
+    padding-left: 6%;
+    padding-top: 4%;
     border-color: darkgreen; /* Debugging border color */
 }
 

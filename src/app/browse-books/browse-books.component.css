@@ -2,10 +2,9 @@
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
   background-color: #FEFFFF;
-  max-height: 90vh;
-  height: auto;
-  overflow: scroll;
+  height: 90vh;
   /* max-height: 90vh; */
+  overflow: scroll;
   width: calc(100vw - 181px);
 }
 
@@ -95,6 +94,7 @@
   grid-template-columns: auto auto ;
   width: 100vw;
   height: auto;
+  overflow: scroll;
 }
 
 .grid-item {
@@ -118,10 +118,10 @@
 /* Styles for devices with a minimum width of 768px (typical tablets) */
 @media (min-width: 768px) {
   .grid-container {
-    max-height: 100vh;
-    height: auto;
-    width: calc(100vw - 80px);
     overflow: scroll;
+    height: 100vh;
+    max-height: 100vh;
+    width: calc(100vw - 80px);
   }
   .grid-item {
     width: calc(calc(86vw - 80px) * 0.1);
@@ -142,7 +142,7 @@
   .grid-container {
     overflow: scroll;
     max-height: 100vh;
-    height: auto;
+    height: 100vh;
     width: calc(100vw - 181px);
   }
   .grid-item {
@@ -163,8 +163,7 @@
 @media (min-width: 1200px) {
   .grid-container {
     overflow: scroll;
-    max-height: 100vh;
-    height: auto;
+    height: 100vh;
     width: calc(100vw - 181px);
   }
   .grid-item {

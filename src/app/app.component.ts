@@ -24,7 +24,7 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.viewportWidth = window.innerWidth;
-    console.log(`Current viewport width is ${this.viewportWidth}px`);
+    // console.log(`Current viewport width is ${this.viewportWidth}px`);
   }
 
   ngOnChanges(changes: SimpleChanges) {
