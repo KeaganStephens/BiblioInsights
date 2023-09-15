@@ -3,10 +3,12 @@
     border-radius: 9px;
     height: 100%;
     width: 100%;
+    border-color: red; /* Debugging border color */
 }
 
 .parent {
     position: relative;
+    border: solid 2px blue; /* Debugging border color */
 }
 
 .child {
@@ -14,11 +16,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: solid 2px green; /* Debugging border color */
 }
 
 .searchContainer {
     width: calc(100vw - 181px);
     height: 7vh;
+    border: solid 2px orange; /* Debugging border color */
 }
 
 .inputSearch {
@@ -28,11 +32,13 @@
     border-radius: 9px;
     background-color: #DAE5EF;
     color: white;
+    border-color: purple; /* Debugging border color */
 }
 
 .grid-item:hover {
     border-color: #212529;
     background-color: white;
+    border-color: yellow; /* Debugging border color */
 }
 
 .infoContainerBlack {
@@ -41,6 +47,7 @@
     height: 100vh;
     width: calc(100vw - 181px);
     z-index: 100;
+    border-color: pink; /* Debugging border color */
 }
 
 .infoContainerWhite {
@@ -51,43 +58,46 @@
     z-index: 101;
     border: solid 1px white;
     border-radius: 9px;
-}
-
-.infoContainerTransparent {
-    position: absolute;
-    height: 70vh;
-    width: calc(72vw - 181px);
-    z-index: 102;
-    border-radius: 9px;
+    border-color: teal; /* Debugging border color */
 }
 
 .infoGrid-container {
-    display: grid;
-    grid-template-columns: auto auto;
+    position: absolute;
+    display: flex;
     overflow: scroll;
     border-radius: 9px;
+    border-color: cyan; /* Debugging border color */
+    height: 100%;
+    width: 100%;
 }
 
 .infoGrid-item-Book {
     background-color: white;
+    border: solid 1px white;
     border-radius: 9px;
-    width: calc((72vw - 181px) * 0.3);
+    width: 100%;
+    height: 100%;
+    flex-basis: 35%;
+    border-color: magenta; /* Debugging border color */
 }
 
 .infoGrid-item-Info {
     background-color: white;
     border-radius: 9px;
-    width: calc((72vw - 181px) * 0.7);
+    flex-basis: 65%;
     padding-top: 2vh;
+    border: solid 1px white;
+    border-color: grey; /* Debugging border color */
 }
 
 .infoAddBook {
     background-color: white;
     border: 1px solid #212529;
     border-radius: 9px;
-    height: 40vh;
-    width: calc((72vw - 181px) * 0.25);
-    margin-bottom: 3vh;
+    height: 60%;
+    width: 100%;
+    margin-bottom: 10%;
+    border-color: olive; /* Debugging border color */
 }
 
 .infoAddPDate {
@@ -95,8 +105,10 @@
     background-color: white;
     border: 1px solid #212529;
     border-radius: 9px;
-    height: 9vh;
-    width: calc((72vw - 181px) * 0.25);
+    height: 10%;
+    width: 100%;
+    margin-bottom: 10%;
+    border-color: navy; /* Debugging border color */
 }
 
 .infoAddPublisher {
@@ -104,34 +116,40 @@
     background-color: white;
     border: 1px solid #212529;
     border-radius: 9px;
-    height: 9vh;
-    width: calc((72vw - 181px) * 0.25);
-    margin-bottom: 3vh;
+    height: 10%;
+    width: 100%;
+    margin-bottom: 10%;
+    border-color: maroon; /* Debugging border color */
 }
 
 /* .InfoAddBookCenter {} */
 
 .InfoBookCoverContainer {
-    width: calc(calc(72vw - 181px) * 0.20);
-    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+    border-color: darkorange; /* Debugging border color */
 }
 
 .InfoBookCover {
-    width: calc(calc(72vw - 181px) * 0.18);
-    height: calc((calc(72vw - 181px) * 0.18) * 1.2);
-    margin-bottom: 2vh;
+    width: 100%;
+    height: 70%;
+    margin-bottom: 10%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-color: violet; /* Debugging border color */
 }
 
 .infoBookAddButton {
-    width: calc(calc(72vw - 181px) * 0.18);
-    height: 7vh;
+    width: 100%;
+    height: 20%;
     border: solid 3px #00CBF0;
     background-color: #00CBF0;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     font-size: 20px;
     color: white;
+    border-color: deepskyblue; /* Debugging border color */
 }
 
 .infoBookAddButton:active {
@@ -143,12 +161,14 @@
 .titleContainer {
     width: calc(calc(72vw - 181px) * 0.5);
     height: calc((calc(72vw - 181px) * 0.1) * 1.2);
+    border-color: gold; /* Debugging border color */
 }
 
 .grid-containerInfo {
     display: grid;
     width: calc((70vw - 181px) * 0.7);
     grid-template-columns: auto auto;
+    border-color: lavender; /* Debugging border color */
 }
 
 .addNotesButton {
@@ -158,6 +178,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     color: white;
+    border-color: coral; /* Debugging border color */
 }
 
 .notesContainer {
@@ -165,6 +186,7 @@
     border: solid #212529 1px;
     border-radius: 9px;
     width: calc((70vw - 181px) * 0.7);
+    border-color: lime; /* Debugging border color */
 }
 
 .byStatement {
@@ -172,23 +194,27 @@
     width: 30vw;
     height: 3vh;
     margin-top: -1vh;
+    border-color: chocolate; /* Debugging border color */
 }
 
 .infoTitleH1 {
     overflow: scroll;
     height: 5vh;
     width: 100%;
+    border-color: dodgerblue; /* Debugging border color */
 }
 
 .notesH3 {
     padding-left: 2vw;
     padding-top: 1vh;
+    border-color: darkgreen; /* Debugging border color */
 }
 
 hr {
     margin: 0;
     margin-left: 1vw;
     margin-right: 1vw;
+    border-color: darkred; /* Debugging border color */
 }
 
 .exitDiv{
@@ -198,5 +224,77 @@ hr {
     background-color: white;
     border-radius: 9px;
     position: relative;
-    left: calc(80.5vw - 181px);;
-  }
+    left: calc(80.5vw - 181px);
+    border-color: darkslategray; /* Debugging border color */
+}
+
+.InfoAddBookCenter{
+    height: 90%;
+    width: 90%;
+}
+
+.InfoBookCoverContainerSub{
+    height: 90%;
+    width: 60%;
+}
+
+
+@media (max-width: 767px) {
+    .infoContainerBlack{
+        width: 100vw;
+        height: 90vh;
+    }
+
+    .infoContainerWhite {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .exitDiv{
+        left: 80.5vw;;
+    }
+
+    .infoGrid-container {
+        flex-direction: column;
+    }
+
+    .infoGrid-item-Book {
+        flex-basis: 35%;
+    }
+    
+    .infoGrid-item-Info {
+        flex-basis: 65%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .infoContainerBlack{
+        width:  calc(100vw - 80px);
+    }
+
+    .infoContainerWhite {
+        height: 80vh;
+        width: calc(80vw - 80px);
+    }
+
+    .exitDiv{
+        left: calc(80.5vw - 80px);
+    }
+
+}
+
+@media (min-width: 992px) {
+    .infoContainerBlack{
+        width:  calc(100vw - 181px);
+    }
+
+    .infoContainerWhite {
+        height: 80vh;
+        width: calc(80vw - 80px);
+    }
+}
+
+@media (min-width: 1200px) {
+    
+}
