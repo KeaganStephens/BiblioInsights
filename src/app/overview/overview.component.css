@@ -45,6 +45,7 @@
     height: 100vh;
     width: calc(100vw - 181px);
     z-index: 100;
+    touch-action: none;
 }
 
 .infoContainerWhite {
@@ -199,11 +200,23 @@
     color: white;
 }
 
+.addNotesButton:active {
+    background-color: white;
+    color: #00CBF0;
+    border-color: white;
+}
+
+
 .notesContainer {
     flex-basis: auto;
     border: solid #212529 1px;
     border-radius: 9px;
     width: 100%;
+    overflow: scroll;
+}
+
+.notesContainer p{
+    margin: 5%;
 }
 
 .byStatement {
@@ -333,6 +346,10 @@ hr {
     }
 
     .infoBookAddButton{
+        font-size: 10px;
+    }
+
+    .infoBookRemoveButton{
         font-size: 10px;
     }
 }
