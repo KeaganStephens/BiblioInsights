@@ -44,7 +44,6 @@ async displayBooks() { //async
           this.items.push(book.title_suggest)
           let cover = book.cover_edition_key
           if(cover != undefined){
-            // console.log([book.cover_edition_key,book.key])
             this.dataService.bookList.push([book.cover_edition_key,book.key,false,null,this.dataService.bookList.length])
           }
           
@@ -52,32 +51,19 @@ async displayBooks() { //async
     this.isLoading = false
   }
 
-  // if (this.items.length > this.maxItemsToShow) {
-  //     const itemsToRemove = this.items.length - this.maxItemsToShow;
-  //     this.items.splice(0, itemsToRemove);
-  //   }
 }
 
 trackScroll() {
   let container = document.getElementById('gridContainer');
-// console.log(container);
-
 if (container) { // Check if container is not null
   const scrollTop = container.scrollTop;
   const scrollHeight = container.scrollHeight;
   const clientHeight = container.clientHeight;
-  // console.log( scrollTop,scrollHeight,clientHeight)
-  // console.log( scrollTop,Math.floor((scrollHeight - clientHeight) * 0.9),clientHeight)
-  // Calculate the scroll percentage
   const scrollPercentage = Math.floor((scrollTop / (scrollHeight - clientHeight)) * 100)
-
-  // Log or use the scrollPercentage as needed
-  // console.log(`Scroll Percentage: ${scrollPercentage.toFixed(2)}%`);
   if(scrollTop > Math.floor((scrollHeight - clientHeight) * 0.5) && !this.isLoading){
     this.displayBooks() //to display the first few books
     this.isLoading = true
     this.currentPage++ 
-    // console.log("working")
   }
 } else {
   console.error("Element with id 'gridContainer' not found.");
@@ -89,9 +75,6 @@ if (container) { // Check if container is not null
     this.bookInfo = this.dataService.bookInfo; // Assign the value from DataService to this component's array
     this.displayBooks() //to display the first few books
     this.currentPage++ //update the page
-    // console.log(this.itemsR)
-    // console.log(document.getElementsByClassName('grid-container'))
-    // console.log(window.scrollY)
   }
 
   @HostListener('window:scroll', ['$event']) 
@@ -102,8 +85,6 @@ if (container) { // Check if container is not null
     const html = document.documentElement;
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.scrollY; // Use scrollY instead of pageYOffset
-    // console.log(window.scrollY)
-    // console.log(windowBottom)
 
     if (windowBottom >= docHeight && !this.isLoading) {
       this.isLoading = true;
@@ -137,27 +118,15 @@ if (container) { // Check if container is not null
     this.dataService.bookInfo.id = searchValue[0]
     this.dataService.bookInfo.currentIndex = searchValue[4]
     this.dataService.bookInfo.inBookshelf = searchValue[2]
-    // console.log(searchValue)
 
     let searchLink = `https://openlibrary.org${searchValue[1]}/editions.json`
     let data = await fetch(searchLink)
-    // console.log(data)
     let formattedData = await data.json()
-    // console.log(formattedData)
     let documentOfData = formattedData.entries[0] //.key
-    // console.log(documentOfData)
-    // if(searchValue[3] != null){
-    //   this.dataService.bookInfo.title = searchValue[3]
-    // }
     this.dataService.bookInfo.title = documentOfData.title
     this.dataService.bookInfo.publish_date = documentOfData.publish_date 
     this.dataService.bookInfo.publishers = documentOfData.publishers[0]
     this.dataService.bookInfo.by_statement = documentOfData.by_statement
-
-    // let bookInfo = `https://openlibrary.org${documentOfData}.json`
-    // let bookData = await fetch(bookInfo)
-    // let formattedBookData = await bookData.json()
-    // console.log(formattedBookData)
   }
 
 }
