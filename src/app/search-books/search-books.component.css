@@ -19,9 +19,9 @@
   .inputSearch{
     height: 70%;
     width: 97%;
-    border: solid 2px #DAE5EF;
+    border: solid 2px #343a40;
     border-radius: 9px;
-    background-color: #DAE5EF;
+    background-color: #343a40;
     color: white;
   }
 
@@ -124,9 +124,9 @@
 padding-left: 1vw;
   height: 70%;
   width: 97%;
-  border: solid 2px #DAE5EF;
+  border: solid 2px #343a40;
   border-radius: 9px;
-  background-color: #DAE5EF;
+  background-color: #343a40;
   color: white;
 }
 
