@@ -45,7 +45,7 @@ async displayBooks() { //async
           let cover = book.cover_edition_key
           if(cover != undefined){
             // console.log([book.cover_edition_key,book.key])
-            this.dataService.bookList.push([book.cover_edition_key,book.key])
+            this.dataService.bookList.push([book.cover_edition_key,book.key,false,null,this.dataService.bookList.length])
           }
           
       });
