@@ -7,10 +7,7 @@ export class DataService {
   currentSubRoot: string | undefined;
 
   booksInLibrary : any = [
-  "OL9621305M",
-  "OL19013040M",
-  "OL11584083M",
-  "OL7031272M"]
+]
 
   bookList: any = [
     ['OL14048034M', '/works/OL863807W', false, null, 0],

@@ -22,7 +22,7 @@ export class SidebarComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     // This is where you should access the input property
-    console.log(this.currentRouting);
+    // console.log(this.currentRouting);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -31,7 +31,7 @@ export class SidebarComponent implements OnInit, OnChanges {
       if(this.current){
         this.someCondition[this.current] = false;
       }
-      console.log('Current Routing Changed:', this.currentRouting);
+      // console.log('Current Routing Changed:', this.currentRouting);
       if(this.currentRouting){
         this.someCondition[this.currentRouting] = true;
         this.current = this.currentRouting

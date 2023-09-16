@@ -102,7 +102,7 @@ if (container) { // Check if container is not null
     const html = document.documentElement;
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.scrollY; // Use scrollY instead of pageYOffset
-    console.log(window.scrollY)
+    // console.log(window.scrollY)
     // console.log(windowBottom)
 
     if (windowBottom >= docHeight && !this.isLoading) {
@@ -132,20 +132,20 @@ if (container) { // Check if container is not null
   }
 
   async getInfoFromApi(searchValue : any){
-    console.log(searchValue[5])
+    console.log(searchValue)
     this.dataService.bookInfo.toDisplay = true
     this.dataService.bookInfo.id = searchValue[0]
     this.dataService.bookInfo.currentIndex = searchValue[4]
-    this.dataService.bookInfo.inBookshelf = searchValue[3]
-    console.log(searchValue)
+    this.dataService.bookInfo.inBookshelf = searchValue[2]
+    // console.log(searchValue)
 
     let searchLink = `https://openlibrary.org${searchValue[1]}/editions.json`
     let data = await fetch(searchLink)
     // console.log(data)
     let formattedData = await data.json()
-    console.log(formattedData)
+    // console.log(formattedData)
     let documentOfData = formattedData.entries[0] //.key
-    console.log(documentOfData)
+    // console.log(documentOfData)
     // if(searchValue[3] != null){
     //   this.dataService.bookInfo.title = searchValue[3]
     // }

@@ -368,6 +368,14 @@ hr {
         left: calc(80.5vw - 80px);
     }
 
+    .infoBookAddButton{
+        font-size: 15px;
+    }
+
+    .infoBookRemoveButton{
+        font-size: 15px;
+    }
+    
 }
 
 @media (min-width: 992px) {
@@ -379,8 +387,16 @@ hr {
         height: 80vh;
         width: calc(80vw - 80px);
     }
+
+   
 }
 
 @media (min-width: 1200px) {
-    
+    .infoGrid-item-Book {
+        flex-basis: 30%;
+    }
+
+    .infoGrid-item-Info {
+        flex-basis: 70%;
+    }
 }

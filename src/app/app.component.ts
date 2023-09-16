@@ -17,7 +17,7 @@ export class AppComponent {
   ngOnInit(){
     this.getCurrentRoute();
     this.viewportWidth = window.innerWidth
-    console.log(this.viewportWidth, 'hello')
+    // console.log(this.viewportWidth, 'hello')
     this.router.navigate(['/browse'])
   }
 
@@ -29,9 +29,9 @@ export class AppComponent {
 
   ngOnChanges(changes: SimpleChanges) {
     let change = this.dataService.currentSubRoot
-    if (changes['change']) {
-      console.log("hello")
-    }
+    // if (changes['change']) {
+    //   console.log("hello")
+    // }
   }
 
   getCurrentRoute() {

@@ -27,18 +27,22 @@ export class OverviewComponent {
   }
 
   removeFromLibrary(data : any){
-    // console.log(data)
+    console.log(this.dataService.booksInLibrary)
     this.bookInfo.inBookshelf = false
-    this.dataService.bookList[this.dataService.bookInfo.currentIndex][3]
-    this.dataService.booksInLibrary.splice(this.dataService.bookList[this.dataService.bookInfo.currentIndex][3], this.dataService.bookList[this.dataService.bookInfo.currentIndex][3])
+    this.dataService.bookList[this.dataService.bookInfo.currentIndex][2] = false
+    let removeItem = this.dataService.bookList[this.dataService.bookInfo.currentIndex][3]
+    console.log(removeItem)
+    this.dataService.booksInLibrary.splice(removeItem,1)
+    
     // console.log(this.dataService.booksInLibrary)
   }
 
   addToLibrary(data : any){
     console.log(data)
     this.bookInfo.inBookshelf = true
+    this.dataService.bookList[this.dataService.bookInfo.currentIndex][2] = true
     this.dataService.bookList[this.dataService.bookInfo.currentIndex][3] = this.dataService.booksInLibrary.length
-    this.dataService.booksInLibrary.push(data.id)
+    this.dataService.booksInLibrary.push(this.dataService.bookList[this.dataService.bookInfo.currentIndex])
     console.log(this.dataService.bookInfo)
   }
 
