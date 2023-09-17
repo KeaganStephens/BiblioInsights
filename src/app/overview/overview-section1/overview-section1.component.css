@@ -115,6 +115,17 @@
 
 @media (max-width: 767px) {
 
+
+    .infoGrid-container {
+        flex-direction: column;
+    }
+
+    .infoGrid-item-Book {
+        height: 100%;
+        width: 100%;
+        flex-basis: 35%;
+    }
+
     .infoGrid-item-Info {
         flex-basis: 65%;
     }
@@ -187,6 +198,32 @@
     .infoBookRemoveButton{
         font-size: 15px;
     }
+
+    .infoGrid-container {
+        flex-direction: row;
+    }
     
 }
 
+@media (min-width: 992px) {
+    .infoContainerBlack{
+        width:  calc(100vw - 181px);
+    }
+
+    .infoContainerWhite {
+        height: 80vh;
+        width: calc(80vw - 80px);
+    }
+
+   
+}
+
+@media (min-width: 1200px) {
+    .infoGrid-item-Book {
+        flex-basis: 30%;
+    }
+
+    .infoGrid-item-Info {
+        flex-basis: 70%;
+    }
+}

@@ -68,6 +68,10 @@
     overflow: scroll;
 }
 
+.notesContainer p{
+    margin: 4%;
+}
+
 .notesH3 {
     padding-left: 6%;
     padding-top: 4%;

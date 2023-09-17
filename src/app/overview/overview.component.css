@@ -1,11 +1,12 @@
-.infoContainerBlack {
-    background-color: rgba(0, 0, 0, 85%);
-    position: fixed;
-    bottom: 0;
-    height: 100vh;
-    width: calc(100vw - 181px);
-    z-index: 100;
-    touch-action: none;
+/* *{
+    border: solid blue 1px;
+} */
+
+.imgR {
+    border: solid 2px transparent;
+    border-radius: 9px;
+    height: 100%;
+    width: 100%;
 }
 
 .parent {
@@ -19,6 +20,16 @@
     transform: translate(-50%, -50%);
 }
 
+
+.infoContainerBlack {
+    background-color: rgba(0, 0, 0, 85%);
+    position: fixed;
+    height: 100vh;
+    width: calc(100vw - 181px);
+    z-index: 100;
+    touch-action: none;
+}
+
 .infoContainerWhite {
     background-color: white;
     position: absolute;
@@ -29,19 +40,10 @@
     border-radius: 9px;
 }
 
-.exitDiv{
-    height: 4vh;
-    width: 4vh;
-    border: solid 5px white;
-    background-color: white;
-    border-radius: 9px;
-    position: relative;
-    left: calc(80.5vw - 181px);
-}
-
 .infoGrid-container {
     position: absolute;
     display: flex;
+    /* overflow: scroll; */
     border-radius: 9px;
     height: 100%;
     width: 100%;
@@ -64,18 +66,36 @@
     border: solid 1px white;
 }
 
+/* .InfoAddBookCenter {} */
 .infoGrid-item-Info-container{
     width:90%;
     height:90%;
     display: flex;
     flex-direction: column;
+
 }
 
+.exitDiv{
+    height: 4vh;
+    width: 4vh;
+    border: solid 5px white;
+    background-color: white;
+    border-radius: 9px;
+    position: relative;
+    left: calc(80.5vw - 181px);
+    
+}
+
+.InfoAddBookCenter{
+    height: 90%;
+    width: 90%;
+    margin: 0% 5%;
+}
 
 @media (max-width: 767px) {
     .infoContainerBlack{
         width: 100vw;
-        height: 100vh;
+        height: 90vh;
     }
 
     .infoContainerWhite {
@@ -109,43 +129,6 @@
         flex-direction: row;
     }
 
-    .infoAddBook{
-        height: 100%;
-        width: 100%;
-        margin-bottom: 0;
-    }
-
-    .infoAddContainer{
-        margin-left: 5%;
-        width: 90%;
-        height: 100%;
-    }
-
-    .infoAddPublisher{
-        height: 40%;
-        width: 100%;
-        margin-bottom: 10%;
-        margin-top: 10%;
-    }
-
-    .infoAddPDate{
-        width: 100%;
-        height: 40%;
-        margin-bottom: 10%;
-        margin-top: 10%;
-    }
-
-    .addNotesButton{
-        height: 4vh;
-    }
-
-    .infoBookAddButton{
-        font-size: 10px;
-    }
-
-    .infoBookRemoveButton{
-        font-size: 10px;
-    }
 }
 
 @media (min-width: 768px) {
@@ -161,14 +144,6 @@
     .exitDiv{
         left: calc(80.5vw - 80px);
     }
-
-    .infoBookAddButton{
-        font-size: 15px;
-    }
-
-    .infoBookRemoveButton{
-        font-size: 15px;
-    }
     
 }
 
@@ -181,7 +156,6 @@
         height: 80vh;
         width: calc(80vw - 80px);
     }
-
    
 }
 
