@@ -14,6 +14,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MobileBarComponent } from './mobile-bar/mobile-bar.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import { OverviewSection1Component } from './overview/overview-section1/overview-section1.component';
+import { OverviewSection2Component } from './overview/overview-section2/overview-section2.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { BookmarksComponent } from './bookmarks/bookmarks.component';
     OverviewComponent,
     MobileBarComponent,
     BookmarksComponent,
+    OverviewSection1Component,
+    OverviewSection2Component,
   ],
   imports: [
     BrowserModule,

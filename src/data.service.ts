@@ -54,7 +54,7 @@ export class DataService {
 
 
   bookInfo = {
-    toDisplay : false,
+    toDisplay : true,
     inBookshelf : false,
     currentIndex : 9,
     id: "OL7122393M",
