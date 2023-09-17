@@ -1,0 +1,19 @@
+<div class="infoGrid-item-Info-container child">
+    <div class="grid-containerInfo">
+        <div class="titleContainer">
+            <h2 class="infoTitleH1">{{bookInfo.title}}</h2>
+            <p class="byStatement">{{bookInfo.by_statement}}</p>
+        </div>
+        <div class="addNotesButtonFlex">
+            <button class="addNotesButton">+Notes</button>
+        </div>
+        
+    </div>
+    <div class="notesContainer" [style.height.px]="notesHeight">
+        <h3 class="notesH3">Notes</h3>
+        <hr>
+        <p>
+            {{bookInfo.notes}}
+        </p>
+    </div>
+</div>

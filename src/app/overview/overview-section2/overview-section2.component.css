@@ -1,0 +1,80 @@
+.infoGrid-item-Info-container{
+    width:90%;
+    height:90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid-containerInfo {
+    display: flex;
+    flex-direction: row;
+    width: 99%;
+    margin-left: 1%;
+    height: auto;
+}
+
+.titleContainer {
+    flex-basis: 75%;
+    width: 100%;
+    height: auto;
+}
+
+.infoTitleH1 {
+    flex-basis: 75%;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+}
+
+.byStatement {
+    overflow: scroll;
+    width: 100%;
+    height: auto;
+    margin-top: -1vh;
+}
+
+.addNotesButtonFlex{
+    flex-basis: 25%;
+}
+
+.addNotesButton {
+    height: 5vh;
+    margin-bottom: 1vh;
+    width: 90%;
+    margin-left: 10%;
+    border: solid 3px #00CBF0;
+    background-color: #00CBF0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    color: white;
+}
+
+.notesContainer {
+    flex-basis: auto;
+    border: solid #212529 1px;
+    border-radius: 9px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.notesH3 {
+    padding-left: 6%;
+    padding-top: 4%;
+}
+
+.addNotesButton:active {
+    background-color: white;
+    color: #00CBF0;
+    border-color: white;
+}

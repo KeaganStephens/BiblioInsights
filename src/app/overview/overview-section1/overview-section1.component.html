@@ -1,0 +1,27 @@
+    <div class="child InfoAddBookCenter">
+        <div class="infoAddBook parent">
+            <div class="InfoBookCoverContainer child parent"> 
+                <div class="child InfoBookCoverContainerSub">
+                    
+                    <img src="https://covers.openlibrary.org/b/olid/{{bookInfo.id}}.jpg" alt="" class="imgR InfoBookCover">
+                    
+                    <button *ngIf="!bookInfo.inBookshelf" class="infoBookAddButton" (click)="addToLibrary(bookInfo)">+Bookshelf</button>
+                    <button *ngIf="bookInfo.inBookshelf" class="infoBookRemoveButton" (click)="removeFromLibrary(bookInfo)">-Bookshelf</button>
+                </div>
+            </div>
+        </div>
+        <div class="infoAddContainer">
+            <div class="infoAddPublisher parent">
+                <p class="child fillText">
+                    Publisher:
+                    {{bookInfo.publishers}}
+                </p>
+            </div>
+            <div class="infoAddPDate parent">
+                <p class="child fillText">
+                    Published: {{bookInfo.publish_date}}
+                </p>
+            </div>
+        </div>
+    </div>
+

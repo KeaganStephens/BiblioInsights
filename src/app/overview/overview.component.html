@@ -6,51 +6,12 @@
         <div class="child infoContainerTransparent infoGrid-container">
             <div class="infoGrid-item-Book parent">
                 <div class="child InfoAddBookCenter">
-                    <div class="infoAddBook parent">
-                        <div class="InfoBookCoverContainer child parent"> 
-                            <div class="child InfoBookCoverContainerSub">
-                                
-                                <img src="https://covers.openlibrary.org/b/olid/{{bookInfo.id}}.jpg" alt="" class="imgR InfoBookCover">
-                                
-                                <button *ngIf="!bookInfo.inBookshelf" class="infoBookAddButton" (click)="addToLibrary(bookInfo)">+Bookshelf</button>
-                                <button *ngIf="bookInfo.inBookshelf" class="infoBookRemoveButton" (click)="removeFromLibrary(bookInfo)">-Bookshelf</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="infoAddContainer">
-                        <div class="infoAddPublisher parent">
-                            <p class="child fillText">
-                                Publisher:
-                                {{bookInfo.publishers}}
-                            </p>
-                        </div>
-                        <div class="infoAddPDate parent">
-                            <p class="child fillText">
-                                Published: {{bookInfo.publish_date}}
-                            </p>
-                        </div>
-                    </div>
+                    <app-overview-section1></app-overview-section1>
                 </div>
             </div>
             <div class="infoGrid-item-Info parent">
                 <div class="infoGrid-item-Info-container child">
-                    <div class="grid-containerInfo">
-                        <div class="titleContainer">
-                            <h2 class="infoTitleH1">{{bookInfo.title}}</h2>
-                            <p class="byStatement">{{bookInfo.by_statement}}</p>
-                        </div>
-                        <div class="addNotesButtonFlex">
-                            <button class="addNotesButton">+Notes</button>
-                        </div>
-                        
-                    </div>
-                    <div class="notesContainer" [style.height.px]="notesHeight">
-                        <h3 class="notesH3">Notes</h3>
-                        <hr>
-                        <p>
-                            {{bookInfo.notes}}
-                        </p>
-                    </div>
+                    <app-overview-section2></app-overview-section2>
                 </div>
             </div>
         </div>
