@@ -100,7 +100,8 @@ if (container) { // Check if container is not null
     const windowHeight = document.documentElement.offsetHeight;
     const body = document.body;
     const html = document.documentElement;
-    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    // const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    const docHeight = html.clientHeight
     const windowBottom = windowHeight + window.scrollY; // Use scrollY instead of pageYOffset
     // console.log(window.scrollY)
     // console.log(windowBottom)
