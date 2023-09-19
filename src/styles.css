@@ -1,10 +1,14 @@
 *{
     box-sizing: border-box;
-    
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* border: solid 1px red; */
 }
 
 html{
     background-color: #212529; 
 }
-html, body { height: 100vh; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    background-color: red;
+}
