@@ -1,5 +1,4 @@
 import { Component, HostListener, SimpleChanges } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 import { DataService } from 'src/data.service';
 
 @Component({
@@ -8,44 +7,32 @@ import { DataService } from 'src/data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BiblioInsights';
-  currentRoute: string | undefined 
-  constructor(private router: Router,private dataService : DataService) {}
 
-  viewportWidth : any
+  constructor(
+    private dataService : DataService,
+  ){}
+
+  desktopDisplay !: boolean
+
+  widthOfDisplayTransition = 764
   
   ngOnInit(){
-    this.getCurrentRoute();
-    this.viewportWidth = window.innerWidth
-    // console.log(this.viewportWidth, 'hello')
-    this.router.navigate(['/browse'])
+    this.dataService.viewportWidth = window.innerWidth
+    this.viewportLargerThan(this.dataService.viewportWidth)
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.viewportWidth = window.innerWidth;
-    // console.log(`Current viewport width is ${this.viewportWidth}px`);
+    this.dataService.viewportWidth = window.innerWidth
+    this.viewportLargerThan(this.dataService.viewportWidth)
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    let change = this.dataService.currentSubRoot
-    // if (changes['change']) {
-    //   console.log("hello")
-    // }
-  }
-
-  getCurrentRoute() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        let routerRoute = this.router.url.split('/')
-        this.currentRoute = routerRoute[1].toLowerCase();
-        if(routerRoute.length > 2){
-          this.dataService.currentSubRoot = routerRoute[2].toLowerCase();
-        }
-      }
+  viewportLargerThan(viewPortWidth : number){
+    if(viewPortWidth > this.widthOfDisplayTransition){
+      this.desktopDisplay = true
+    }else{
+      this.desktopDisplay = false
     }
-    );
   }
-
   
 }

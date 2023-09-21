@@ -1,48 +1,9 @@
-<!-- <div class="custom-container" *ngIf="viewportWidth > 767">
-  <div class="custom-row" style="min-width: 768px">
-    <div class="custom-col-sidebar" style="padding: 0; max-width: 181px;" [ngStyle]="{'max-width.px': viewportWidth < 992 ? 80 : 181 }">
-      <app-sidebar [currentRouting]="currentRoute" ></app-sidebar>
-    </div>
-    <div class="custom-col-router" style="padding: 0; overflow: hidden;">
-      <router-outlet style="padding: 0; overflow: scroll;"></router-outlet>
-    </div>
-  </div>
-</div>
-
-<div class="custom-container" *ngIf="viewportWidth < 767">
-  <div class="custom-row">
-    <div class="custom-col-md-router" style="padding: 0; overflow: hidden;">
-      <router-outlet style="padding: 0; overflow: scroll;"></router-outlet>
-    </div>
-    <div class="custom-col-md-mobile-bar" style="padding: 0;">
-      <app-mobile-bar [currentRouting]="currentRoute"></app-mobile-bar>
-    </div>
-  </div>
-</div> -->
-
-
-<div class="custom-container" *ngIf="viewportWidth > 767 else elseBlock">
-  <div class="custom-row">
-    <div class="custom-col-sidebar" [ngStyle]="{'max-width.px': viewportWidth < 992 ? 80 : 181 }">
-      <app-sidebar [currentRouting]="currentRoute" ></app-sidebar>
-    </div>
-    <div class="custom-col-router" style="padding: 0; overflow: hidden;">
-      <router-outlet style="padding: 0; overflow: scroll;"></router-outlet>
-    </div>
-  </div>
+<div *ngIf="desktopDisplay else elseBlock">
+  <app-desktop-view></app-desktop-view>
 </div>
 
 <ng-template #elseBlock >
-  <div class="custom-container" *ngIf="viewportWidth < 767">
-    <div class="custom-row">
-      <div class="custom-col-md-router">
-        <router-outlet style="padding: 0; overflow: scroll;"></router-outlet>
-      </div>
-      <div class="custom-col-md-mobile-bar" style="padding: 0;">
-        <app-mobile-bar [currentRouting]="currentRoute"></app-mobile-bar>
-      </div>
-    </div>
-  </div>
+  <app-mobile-view></app-mobile-view>
 </ng-template>
 
 

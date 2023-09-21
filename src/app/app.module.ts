@@ -16,6 +16,8 @@ import { MobileBarComponent } from './mobile-bar/mobile-bar.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { OverviewSection1Component } from './overview/overview-section1/overview-section1.component';
 import { OverviewSection2Component } from './overview/overview-section2/overview-section2.component';
+import { MobileViewComponent } from './mobile-view/mobile-view.component';
+import { DesktopViewComponent } from './desktop-view/desktop-view.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { OverviewSection2Component } from './overview/overview-section2/overview
     BookmarksComponent,
     OverviewSection1Component,
     OverviewSection2Component,
+    MobileViewComponent,
+    DesktopViewComponent,
   ],
   imports: [
     BrowserModule,

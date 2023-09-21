@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from 'src/data.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-browse-books',
@@ -9,47 +8,44 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class BrowseBooksComponent implements OnInit {
   constructor(
-    private dataService : DataService,
-    private snackbar : MatSnackBar
+    private dataService : DataService
     ){}
 
   bookInfo : any
   bookList = this.dataService.bookList
-
   items: number[] = []; 
-  
 
   //a array to store the items
-  isLoading = false; //to stop it form loading everything all at once 
+  BooksAreLoading = false; //to stop it form loading everything all at once 
   maxItemsToShow = 100; // Set a maximum number of items to display
-  subjects = ["history", "science", "fiction", "art"]; //the subjects to pull info from
-  currentPage = 8; //to keep track from what i pulled 
+  subjectsOfBooks = ["history", "science", "fiction", "art"]; //the subjectsOfBooks to pull info from
+  currentPage = 5; //to keep track from what i pulled 
   booksPerPage = 10; //to know how many books are called at once
 
-  async fetchBooksBySubject(subject : string, page : number, perPage : number) { //getting the file
-    let offset = (page - 1) * perPage; //knowing where to start calling from 
-    // console.log(offset)
-    const url = `https://openlibrary.org/search.json?subject=${subject}&limit=${perPage}&offset=${offset}`; //a lint to fetch data from 
-    const response = await fetch(url); //making a HTTP request 
-    const data = await response.json(); //returns a promise that resolves with the parsed JSON data
-    // console.log(data)
-    this.isLoading = false
-    return data.docs; //returning a array of dictionaries 
+async fetchBooksBySubject(subject : string, page : number, perPage : number) { //getting the file
+  let offset = (page - 1) * perPage; //knowing where to start calling from 
+  // console.log(offset)
+  const url = `https://openlibrary.org/search.json?subject=${subject}&limit=${perPage}&offset=${offset}`; //a lint to fetch data from 
+  const response = await fetch(url); //making a HTTP request 
+  const data = await response.json(); //returns a promise that resolves with the parsed JSON data
+  // console.log(data)
+  this.BooksAreLoading = false
+  return data.docs; //returning a array of dictionaries 
 }
 
 async displayBooks() { //async 
-  for (const subject of this.subjects) { //loop through subjects
+  for (const subject of this.subjectsOfBooks) { //loop through subjectsOfBooks
       const books = await this.fetchBooksBySubject(subject,this.currentPage,this.booksPerPage); //wait for the function return a document of the img numbers
       books.slice(0, this.booksPerPage).forEach((book: { title_suggest: number,cover_edition_key: string;key : string }) => {
           this.items.push(book.title_suggest)
           let cover = book.cover_edition_key
           if(cover != undefined){
-            // console.log([book.cover_edition_key,book.key])
+            console.log(book.cover_edition_key)
             this.dataService.bookList.push([book.cover_edition_key,book.key,false,null,this.dataService.bookList.length])
           }
           
       });
-    this.isLoading = false
+    this.BooksAreLoading = false
   }
 
   // if (this.items.length > this.maxItemsToShow) {
@@ -73,9 +69,9 @@ if (container) { // Check if container is not null
 
   // Log or use the scrollPercentage as needed
   // console.log(`Scroll Percentage: ${scrollPercentage.toFixed(2)}%`);
-  if(scrollTop > Math.floor((scrollHeight - clientHeight) * 0.5) && !this.isLoading){
+  if(scrollTop > Math.floor((scrollHeight - clientHeight) * 0.5) && !this.BooksAreLoading){
     this.displayBooks() //to display the first few books
-    this.isLoading = true
+    this.BooksAreLoading = true
     this.currentPage++ 
     // console.log("working")
   }
@@ -106,13 +102,13 @@ if (container) { // Check if container is not null
     // console.log(window.scrollY)
     // console.log(windowBottom)
 
-    if (windowBottom >= docHeight && !this.isLoading) {
-      this.isLoading = true;
+    if (windowBottom >= docHeight && !this.BooksAreLoading) {
+      this.BooksAreLoading = true;
       this.displayBooks();
       this.currentPage++
       // Simulate a delay for loading, replace with your API call.
       setTimeout(() => {
-        this.isLoading = false;
+        this.BooksAreLoading = false;
       }, 1000);
     }
   }

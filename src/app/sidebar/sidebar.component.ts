@@ -1,16 +1,32 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges, HostListener } from '@angular/core';
+import { Component,OnInit,HostListener } from '@angular/core';
+import { DataService } from 'src/data.service';
+import { CurrentRoutingService } from '../current-routing.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit, OnChanges {
-  @Input() currentRouting: string | undefined;
-  current : string | undefined
-  viewportWidth = window.innerWidth;
+export class SidebarComponent implements OnInit{
+  constructor(
+    private dataService : DataService,
+    private routingService : CurrentRoutingService
+    ) {}
 
-  someCondition: { [key: string]: boolean } = {
+  viewportWidth = this.dataService.viewportWidth
+  sidebarTransformLength = 992;
+  removeSidebarText = this.viewportLessSidebarTL(this.viewportWidth,this.sidebarTransformLength)
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.viewportWidth = this.dataService.viewportWidth
+    this.removeSidebarText = this.viewportLessSidebarTL(this.viewportWidth,this.sidebarTransformLength)
+  }
+
+  currentRouting : string = this.routingService.currentRoute
+  current : string | undefined
+
+  activeSidebarElement: { [key: string]: boolean } = {
     bookshelf: false,
     browse: false,
     search: false,
@@ -18,46 +34,31 @@ export class SidebarComponent implements OnInit, OnChanges {
     settings: false,
   };
 
-  constructor() {}
-
-  ngOnInit() {
-    // This is where you should access the input property
-    // console.log(this.currentRouting);
+  async ngOnInit() {
+    await this.routingService.getCurrentRoute()
+    this.currentRouting = this.routingService.currentRoute
+    this.activeSidebarElement[this.currentRouting] = true
   }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['currentRouting']) {
-      // Handle changes to the currentRouting property here
-      if(this.current){
-        this.someCondition[this.current] = false;
-      }
-      // console.log('Current Routing Changed:', this.currentRouting);
-      if(this.currentRouting){
-        this.someCondition[this.currentRouting] = true;
-        this.current = this.currentRouting
-      }
-    }
-  }
-
-  // current = 'bookshelf';
 
   navLinkColor(data: string) {
     if (data == this.current) {
       return;
     }
-    this.someCondition[data] = !this.someCondition[data];
+    this.activeSidebarElement[data] = !this.activeSidebarElement[data];
     if(this.current){
-      this.someCondition[this.current] = false;
+      this.activeSidebarElement[this.current] = false;
     }
     this.current = data;
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.viewportWidth = window.innerWidth;
-    // console.log(`Current viewport width is ${this.viewportWidth}px`);
+  
+  viewportLessSidebarTL(viewport : number, sidebar : number){
+    if(viewport < sidebar){
+      return true
+    }else{
+      return false
+    }
   }
-
 
 }
 

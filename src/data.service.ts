@@ -4,10 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
+
+  viewportWidth : any
+
   currentSubRoot: string | undefined;
 
-  booksInLibrary : any = [
-]
+  booksInLibrary : any = []
 
   bookList: any = [
     ['OL14048034M', '/works/OL863807W', false, null, 0],
