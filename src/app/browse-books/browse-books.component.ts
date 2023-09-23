@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from 'src/data.service';
+import { Book } from '../models/book.model';
 
 @Component({
   selector: 'app-browse-books',
@@ -41,7 +42,7 @@ async displayBooks() { //async
           let cover = book.cover_edition_key
           if(cover != undefined){
             console.log(book.cover_edition_key)
-            this.dataService.bookList.push([book.cover_edition_key,book.key,false,null,this.dataService.bookList.length])
+            this.dataService.bookList.push( new Book(book.cover_edition_key,book.key,false,null,this.dataService.bookList.length))
           }
           
       });
@@ -131,12 +132,12 @@ if (container) { // Check if container is not null
   async getInfoFromApi(searchValue : any){
     console.log(searchValue)
     this.dataService.bookInfo.toDisplay = true
-    this.dataService.bookInfo.id = searchValue[0]
-    this.dataService.bookInfo.currentIndex = searchValue[4]
-    this.dataService.bookInfo.inBookshelf = searchValue[2]
+    this.dataService.bookInfo.id = searchValue.ID
+    this.dataService.bookInfo.currentIndex = searchValue.Index
+    this.dataService.bookInfo.inBookshelf = searchValue.Status
     // console.log(searchValue)
 
-    let searchLink = `https://openlibrary.org${searchValue[1]}/editions.json`
+    let searchLink = `https://openlibrary.org${searchValue.URL}/editions.json`
     let data = await fetch(searchLink)
     // console.log(data)
     let formattedData = await data.json()

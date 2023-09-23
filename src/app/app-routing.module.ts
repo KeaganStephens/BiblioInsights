@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { ReadingProgressTrackerComponent } from './reading-progress-tracker/reading-progress-tracker.component';
 import { BrowseBooksComponent } from './browse-books/browse-books.component';
 import { SearchBooksComponent } from './search-books/search-books.component';

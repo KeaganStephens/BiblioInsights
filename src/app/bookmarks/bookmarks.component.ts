@@ -37,65 +37,13 @@ export class BookmarksComponent {
     return data.docs; //returning a array of dictionaries 
 }
 
-async displayBooks() { //async 
-  for (const subject of this.subjects) { //loop through subjects
-      const books = await this.fetchBooksBySubject(subject,this.currentPage,this.booksPerPage); //wait for the function return a document of the img numbers
-      books.slice(0, this.booksPerPage).forEach((book: { title_suggest: number,cover_edition_key: string;key : string }) => {
-          this.items.push(book.title_suggest)
-          let cover = book.cover_edition_key
-          if(cover != undefined){
-            this.dataService.bookList.push([book.cover_edition_key,book.key,false,null,this.dataService.bookList.length])
-          }
-          
-      });
-    this.isLoading = false
-  }
-
-}
-
-trackScroll() {
-  let container = document.getElementById('gridContainer');
-if (container) { // Check if container is not null
-  const scrollTop = container.scrollTop;
-  const scrollHeight = container.scrollHeight;
-  const clientHeight = container.clientHeight;
-  const scrollPercentage = Math.floor((scrollTop / (scrollHeight - clientHeight)) * 100)
-  if(scrollTop > Math.floor((scrollHeight - clientHeight) * 0.5) && !this.isLoading){
-    this.displayBooks() //to display the first few books
-    this.isLoading = true
-    this.currentPage++ 
-  }
-} else {
-  console.error("Element with id 'gridContainer' not found.");
-}
-  
-}
 
   ngOnInit(): void {
     this.bookInfo = this.dataService.bookInfo; // Assign the value from DataService to this component's array
-    this.displayBooks() //to display the first few books
+
     this.currentPage++ //update the page
   }
 
-  @HostListener('window:scroll', ['$event']) 
-  onScroll(event: Event) {
-    // Detect when the user has scrolled to the bottom of the page.
-    const windowHeight = document.documentElement.offsetHeight;
-    const body = document.body;
-    const html = document.documentElement;
-    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-    const windowBottom = windowHeight + window.scrollY; // Use scrollY instead of pageYOffset
-
-    if (windowBottom >= docHeight && !this.isLoading) {
-      this.isLoading = true;
-      this.displayBooks();
-      this.currentPage++
-      // Simulate a delay for loading, replace with your API call.
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 1000);
-    }
-  }
 
   addToLibrary(data : string){
     console.log(data)

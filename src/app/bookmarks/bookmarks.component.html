@@ -1,5 +1,5 @@
 <app-overview *ngIf="bookInfo.toDisplay" ></app-overview>
-<div class="grid-container parent" id='gridContainer' (scroll)="trackScroll()">
+<div class="grid-container parent" id='gridContainer'>
     <ng-container>
         <div *ngFor="let item of bookList" class="grid-item child parentI" (click)="getInfoFromApi(item)"> 
             <!-- <p>{{item}}</p> -->

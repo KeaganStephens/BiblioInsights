@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { ReadingProgressTrackerComponent } from './reading-progress-tracker/reading-progress-tracker.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowseBooksComponent } from './browse-books/browse-books.component';
@@ -22,7 +21,6 @@ import { DesktopViewComponent } from './desktop-view/desktop-view.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ReadingProgressTrackerComponent,
     SidebarComponent,
     BrowseBooksComponent,
